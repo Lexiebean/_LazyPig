@@ -55,6 +55,34 @@ local CheckBoxTables = {
 		[3] = { "LazyPigCheckbox24", "Battlegrounds" },
 		[4] = { "LazyPigCheckbox25", "Mute Permanently", "Mute the WorldChannel for good..."}
 	},
+	
+	["BWL Sand/Ore Roll Automation"] = {
+		[0] = "LazyPigCheckboxGroupBWLRoll",
+		[1] = { "LazyPigCheckbox26", "Need" },
+		[2] = { "LazyPigCheckbox27", "Greed" },
+		[3] = { "LazyPigCheckbox28", "Pass" }
+	},
+	
+	["Tailoring Roll Automation (Silks and Cloth)"] = {
+		[0] = "LazyPigCheckboxGroupTailoringRoll",
+		[1] = { "LazyPigCheckbox102", "Need" },
+		[2] = { "LazyPigCheckbox103", "Greed" },
+		[3] = { "LazyPigCheckbox104", "Pass" }
+	},
+	
+	["Food and Drink Roll Automation"] = {
+		[0] = "LazyPigCheckboxGroupFoodAndDrinkRoll",
+		[1] = { "LazyPigCheckbox105", "Need" },
+		[2] = { "LazyPigCheckbox106", "Greed" },
+		[3] = { "LazyPigCheckbox107", "Pass" }
+	},
+	
+	["Emerald Sanctum Roll Automation"] = {
+		[0] = "LazyPigCheckboxGroupEsShardsRoll",
+		[1] = { "LazyPigCheckbox108", "Need" },
+		[2] = { "LazyPigCheckbox109", "Greed" },
+		[3] = { "LazyPigCheckbox110", "Pass" }
+	},
 
 	["Battlegrounds Automation"] = {
 		[0] = "LazyPigCheckboxGroupBGAutomation",
@@ -185,7 +213,7 @@ function LazyPig_CreateOptionsFrame()
 	frame:SetScale(.81)
 
 	frame:SetWidth(630)
-	frame:SetHeight(528)
+	frame:SetHeight(633)
 	
 	frame:SetPoint("TOPLEFT", nil, "TOPLEFT", 250, -50)
 	frame:SetBackdrop( {
@@ -235,7 +263,7 @@ function LazyPig_CreateOptionsFrame()
 	local fs_title = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
 	local LP_VERSION = GetAddOnMetadata("_LazyPig", "Version")
 	fs_title:SetPoint("CENTER", frame.texture_title, "CENTER", 0, 12)
-	fs_title:SetText("LazyPig Options v6.0.3")
+	fs_title:SetText("LazyPig Options v" .. LP_VERSION)
 
 	frame.fs_title = fs_title
 
@@ -291,22 +319,34 @@ function LazyPig_CreateOptionsFrame()
 	frame.cbgroup_sand = CheckBoxGroup(frame, 20, -345, str, CheckBoxTables[str])
 	
 	local str = "Naxx Roll Automation"
-	frame.cbgroup_sand = CheckBoxGroup(frame, 20, -405, str, CheckBoxTables[str])
-	
+	frame.cbgroup_naxx = CheckBoxGroup(frame, 20, -405, str, CheckBoxTables[str])
+
+	local str = "BWL Sand/Ore Roll Automation"
+	frame.cbgroup_bwl = CheckBoxGroup(frame, 20, -465, str, CheckBoxTables[str])
+
+	local str = "Emerald Sanctum Roll Automation"
+	frame.cbgroup_es = CheckBoxGroup(frame, 20, -525, str, CheckBoxTables[str])
+
+	local str = "Food and Drink Roll Automation"
+	frame.cbgroup_foodanddrink = CheckBoxGroup(frame, 250, -45, str, CheckBoxTables[str])
+
+	local str = "Tailoring Roll Automation (Silks and Cloth)"
+	frame.cbgroup_tailoring = CheckBoxGroup(frame, 250, -107, str, CheckBoxTables[str])
+
 	local str = "Smart Salvation Remover"
-	frame.cbgroup_salvationremover = CheckBoxGroup(frame, 250, -45, str, CheckBoxTables[str])
+	frame.cbgroup_salvationremover = CheckBoxGroup(frame, 250, -169, str, CheckBoxTables[str])
 
 	local str = "Group Invite Accept Rules"
-	frame.cbgroup_groupinvite = CheckBoxGroup(frame, 250, -92, str, CheckBoxTables[str])
+	frame.cbgroup_groupinvite = CheckBoxGroup(frame, 250, -215, str, CheckBoxTables[str])
 
 	local str = "Battlegrounds Automation"
-	frame.cbgroup_bgautomation = CheckBoxGroup(frame, 250, -168, str, CheckBoxTables[str])
+	frame.cbgroup_bgautomation = CheckBoxGroup(frame, 250, -292, str, CheckBoxTables[str])
 	
 	local str = "Nameplates Display Rules"
-	frame.cbgroup_nameplates = CheckBoxGroup(frame, 250, -272, str, CheckBoxTables[str])
+	frame.cbgroup_nameplates = CheckBoxGroup(frame, 250, -397, str, CheckBoxTables[str])
 	
 	local str = "Single Choice Rules"
-	frame.cbgroup_singlechoise = CheckBoxGroup(frame, 250, -338, str, CheckBoxTables[str])
+	frame.cbgroup_singlechoise = CheckBoxGroup(frame, 250, -465, str, CheckBoxTables[str])
 	
 	local str = "World Chat Mute"
 	frame.cbgroup_worldchatmute = CheckBoxGroup(frame, 450, -45, str, CheckBoxTables[str])

@@ -1,8 +1,8 @@
 ## Interface: 11200
 ## Title: [|cff3fcf26K|r] LazyPig
-## Version: 6.0.4
+## Version: 6.0.5
 ## Notes: type /lp first time in order to setup the addon so it suit's you, this addon manage's many simple tasks such as auto dismount auto accept or auto roll and is also able to filter the chat from common spam or completely shut off channels while in azone type so it is adviced to configure it to your own liking when logging in.
-## Author: Ogrisch, mrmr and |cffbe5effLexie|r
+## Author: Ogrisch, mrmr, |cffbe5effLexie|r and |c013220ffTrumpetX|r
 ## SavedVariables: LPCONFIG, LPMULTIBOX
 
 LazyPig.xml
